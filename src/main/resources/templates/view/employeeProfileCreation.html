@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{BaseLayout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Add Broker Applicant</title>
+<style>
+.form-actions {
+	margin: 0;
+	text-align: center;
+}
+</style>
+
+</head>
+<body>
+	<div id="page-wrapper" layout:fragment="content">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="indexwithsm">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Add
+					Employee</li>
+			</ol>
+		</nav>
+		<div class="card shadow mb-4 mt-2">
+			<div class="card-header custom-smile-form-header">
+
+				Employee Creation
+				<button type="button" class="btn custom-smile-btn-light float-right"
+					data-toggle="modal" data-target="#myModal">
+					<i class="fas fa-question-circle"></i>
+				</button>
+			</div>
+			<div class="card-body">
+				<!-- Page Heading -->
+
+
+				<!-- Nested Row within Card Body -->
+				<div class="row">
+					<div class="col-lg-12">
+						<form th:action="@{/employee}" th:object="${employee}"
+							method="post" id="employeeForm">
+							<!-- Card Content - Collapse -->
+
+							<div class="form-group row ml-1 mr-1">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{empId}"><span
+										class="text-danger">&nbsp;*</span></label> <input type="text"
+										class="form-control" th:field="*{empId}" id="empId">
+										<input type="button" onClick="isExist()" value="check availability"></input>
+										
+										<span id="empid"
+										></span>
+								</div>
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{empFName}"><span
+										class="text-danger">&nbsp;*</span></label> <input type="text"
+										class="form-control" th:field="*{firstName}" id=""></input> <span
+										th:errors="*{firstName}" style="color: red"></span>
+								</div>
+							</div>
+
+							<div class="form-group row ml-1 mr-1">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{empMName}">Middle
+										Name<span class="text-danger">&nbsp;*</span>
+									</label> <input type="text" class="form-control" th:field="*{midName}"
+										id=""></input> <span th:errors="*{midName}" style="color: red"></span>
+								</div>
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{empLName}">Last
+										Name<span class="text-danger">&nbsp;*</span>
+									</label> <input type="text" class="form-control" th:field="*{lastName}"
+										id=""></input> <span th:errors="*{lastName}"
+										style="color: red"></span>
+								</div>
+							</div>
+
+
+							<div class="form-group row ml-1 mr-1">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{designation}">Designation<span
+										class="text-danger">&nbsp;*</span></label> <input type="text"
+										class="form-control" th:field="*{designation}" id=""></input>
+									<span th:errors="*{designation}" style="color: red"></span>
+								</div>
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{empType}">Employee Type<span
+										class="text-danger">&nbsp;*</span></label> <input type="text"
+										class="form-control" th:field="*{empType}" id=""></input> <span
+										th:errors="*{empType}" style="color: red"></span>
+								</div>
+							</div>
+
+
+							<div class="form-group row ml-1 mr-1">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{dob}">Date of Birth<span
+										class="text-danger">&nbsp;*</span></label> <input type="date"
+										class="form-control" th:field="*{dob}"></input> <span
+										th:errors="*{dob}" style="color: red"></span>
+								</div>
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label class="custom-smile-form-label" th:text="#{doj}">Date of Joining<span
+										class="text-danger">&nbsp;*</span></label> <input type="date"
+										class="form-control" th:field="*{doj}" id=""
+										pattern="dd-MM-yyyy"></input> <span th:errors="*{doj}"
+										style="color: red"></span>
+								</div>
+							</div>
+							<div class="form-actions mt-1">
+						<input type="submit" class="btn btn-primary" value="Submit"></input>
+					</div>
+
+					</form>
+					</div>
+
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<th:block layout:fragment="scripts">
+	
+	<script type="text/javascript" th:src="@{/js/customjs/employee.js}"></script>
+	
+	</th:block>
+</body>
+</html>

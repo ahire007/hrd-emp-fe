@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{BaseLayout/layout}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.form-actions{
+margin: 0;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div id="page-wrapper" layout:fragment="content">
+
+          <div class="card shadow mb-4 mt-2">
+
+            
+            <div class="card-header py-3 ">
+
+              <h6 class="m-0 font-weight-bold text-primary" id="datatables">Proposal Creation</h6>
+             
+
+            </div>
+            <div class="card-body">
+
+              <!-- Page Heading -->
+
+              <div class="d-sm-flex align-items-center justify-content-center mb-4">
+               
+              </div>
+
+
+              <!-- Nested Row within Card Body -->
+              <div class="row">
+                <div class="col-lg-12">
+                <form action="#" method="post">
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <label><b> Subject<span class="text-danger">*</span></b></label>
+                      <input  type="text" class="form-control"  id="">
+                      
+                    </div>
+                      
+                  </div>
+
+
+                <div class="form-group row">
+                        <div class="col-lg-12 mb-3 mb-sm-0 nopadding">
+                            <label><b>Issue<span class="text-danger">*</span></b></label> 
+							<textarea class="form-control" id="txtEditor1"></textarea> 
+                    </div>
+                  </div>
+
+                <div class="form-group row">
+                        <div class="col-lg-12 mb-3 mb-sm-0">
+                             <label><b>Observation<span class="text-danger">*</span></b></label>
+							<textarea class="form-control" id="txtEditor2"></textarea> 
+                       </div>
+                  </div>
+                  <div class="form-group row">
+                        <div class="col-lg-10 mb-3 mb-sm-0">    
+                            <label><b>Proposal<span class="text-danger">*</span></b></label>
+							<textarea class="form-control" id="txtEditor3"></textarea> 
+                    </div>
+               </div>
+               
+               
+               <div class="container">
+					<div class="row">
+						<div class="col-lg-12 nopadding">
+							<textarea id="txtEditor5"></textarea> 
+						</div>
+					</div>
+				</div>
+               
+                  <div class="form-group row">
+                        <div class="col-lg-10 mb-3 mb-sm-0">
+                      <label><b>Recommendation<span class="text-danger">*</span></b></label>
+							<textarea class="form-control" id="txtEditor4"></textarea> 
+                    </div>
+                  </div>
+			<div class="form-actions">
+                <input type="submit" class="btn btn-primary " value="Submit"></input> 
+           
+							<a th:href="@{'/view-proposal'}">
+								<button type="button"
+									class="btn btn-primary btn-icon-split">
+									<span class="text">Back</span>
+								</button>
+							</a>
+				     </div>
+          </form>
+                </div>
+              </div>
+
+            </div>
+            <!--End of card body -->
+            <!-- </div> -->
+            <!-- End of collapsable card -->
+         
+          	<!-- ACTUAL BODY CONTENT -->
+          </div>
+          </div>
+        
+<th:block layout:fragment="scripts">
+<script type="text/javascript" th:src="@{/js/editor.js}"></script>
+		<script>
+			
+				$("#txtEditor1").Editor();
+				$("#txtEditor2").Editor();
+				$("#txtEditor3").Editor();
+				$("#txtEditor4").Editor();
+				$("#txtEditor5").Editor();
+		
+		</script>
+</th:block>
+</body>
+</html>

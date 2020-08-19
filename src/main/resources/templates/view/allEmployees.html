@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{BaseLayout/layout}">
+<head>
+
+<title>DataTabels</title>
+<style>
+
+/*style for loader*/
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('/common/images/d-loading.gif') 50% 50% no-repeat
+		rgb(249, 249, 249);
+}
+</style>
+
+</head>
+<body>
+
+	<div id="page-wrapper" layout:fragment="content">
+		<div class="loader"></div>
+
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="indexwithsm">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">DataTable</li>
+			</ol>
+		</nav>
+     
+     
+     
+		<div class="card shadow mb-4 mt-2 border-left-danger">
+
+			<!--card header-->
+			<!-- <div class="card-header custom-smile-form-header">
+      		DataTables	Example
+	
+						<button type="button"
+							class="btn btn-primary btn-icon-split float-right btn-sm"
+							data-toggle="modal" data-target="#myModal" id="idAddOption">
+							<span class="icon "> <i class="fas fa-plus"></i>
+							</span> <span class="text">Add New</span>
+						</button>
+						<button type="button"
+							class="btn btn-primary float-right view btn-sm mr-1"
+							id="proposalViewButton" data-toggle="modal"
+							data-target="#vieweditmodel">Edit/View</button>
+						<button class="btn text-warning float-right mr-1" id="idAddOption"  data-toggle="modal" data-target="#vieweditmodel">
+								<i class="fas fa-edit fa-lg"></i>Edit
+							</button>
+			</div> -->
+			<!--end of card header-->
+
+			<div class="card-header py-3">
+              <div class="form -group row">
+                <div class="col-sm-10 mb-3 mb-sm-0">
+                  <h6 class="m-0 font-weight-bold " id="datatables">All Employees</h6>
+                 
+                </div>
+
+                <div class="col-sm-2 mb-3 mb-sm-0">
+                   <a th:href="@{'/employee/create'}"> <button type="button" class="btn btn-primary btn-icon-split float-right" >
+                    <span class="icon ">
+                      <em class="fas fa-plus"></em>
+                    </span> <span class="text">Add New</span>
+                  </button></a>
+                </div>
+              </div>
+            </div>
+
+			<div class="card-body">
+
+
+			 <table class="table table-bordered table-striped" id="example1" >
+
+                <thead>
+                  <tr>
+
+                   	<th>Employee Code</th>
+														<th>Employee Name</th>
+														<th>Employee DOB</th>
+														<th>Date of Joining</th>
+														<th>Action</th>
+
+                  </tr>
+                </thead>
+
+                <tbody>
+						<tr th:each="employee : ${listEmployee}">
+													
+													 	<td th:text="${employee.empId}"></td>
+													    <td th:text="${employee.firstName}"></td>
+													  	<td th:text="${employee.dob}"></td>
+													 	<td th:text="${employee.doj}"></td>
+													 	<td>
+                   															 &nbsp;&nbsp;&nbsp;
+                    									<a th:href="@{'/employee/' + ${employee.empId}}">Delete</a></td>
+												</tr>
+                </tbody>
+              </table>
+				<span class="exportbuttons"> </span>
+				<!-- </div> -->
+				<!-- table responsive -->
+			</div>
+			 <br></br>
+					<form th:action="@{/report}" method="get">
+					<label><strong>Report Generation<span class="text-danger">*</span></strong></label>
+					<div class="form-group row">
+					<div class="col-sm-6 mb-3 mb-sm-0">
+						<select class="form-control" id="reportFormat" name="reportFormat">
+							<option value="">Select format</option>
+							<option  th:value="pdf"
+								th:text="PDF"></option>
+								<option  th:value="csv"
+								th:text="CSV"></option>
+								<option  th:value="xls"
+								th:text="XLS"></option>
+								<option  th:value="xml"
+								th:text="XML"></option>
+								<option  th:value="html"
+								th:text="HTML"></option>
+						</select>
+							
+						</div>
+						<div class="col-sm-6 mb-3 mb-sm-0">
+						<button type="submit"
+								class="btn btn-primary btn-icon-split">
+								<span class="text">Generate report</span>
+							</button>
+						</div>
+						</div>
+				
+					</form>
+		</div>
+
+		<!---->
+
+		<!--end of card-->
+
+		<!--start of modal related to add new record-->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-light">
+						<h4 class="modal-title custom-smile-form-header"
+							style="color: black;">This is Modal</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Name<span
+									class="text-danger">&nbsp;*</span></label> <input type="text"
+									class="form-control" name="TextField" placeholder="TextField">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Position<span
+									class="text-danger">&nbsp;*</span></label> <input type="text"
+									class="form-control" name="TextField" placeholder="TextField">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Office<span
+									class="text-danger">&nbsp;*</span></label> <input type="text"
+									class="form-control" name="TextField" placeholder="TextField">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Age<span
+									class="text-danger">&nbsp;*</span></label> <input type="number"
+									class="form-control" name="NumberField"
+									placeholder="Number Field">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Start Date<span
+									class="text-danger">&nbsp;*</span></label> <input type="date"
+									class="form-control" name="DateField" placeholder="Date Field">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Age<span
+									class="text-danger">&nbsp;*</span></label> <input type="number"
+									class="form-control" name="NumberField"
+									placeholder="Number Field">
+							</div>
+						</div>
+
+					</div>
+					<!--end of modal body-->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success">Save</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+				<!--end of modal-content-->
+
+			</div>
+		</div>
+		<!--end of modal-->
+
+
+		<!--start of model related to Delete-->
+		<div class="modal fade custom-smile-form-header" id="vieweditmodel"
+			role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-light">
+						<h4 class="modal-title custom-smile-form-header"
+							style="color: black;">View/Update Record</h4>
+						<button class="btn text-warning">
+							<i class="fas fa-edit fa-lg"></i>
+						</button>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Name<span
+									class="text-danger">&nbsp;*</span></label> <input type="text"
+									class="form-control" name="TextField" placeholder="TextField">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">Position<span
+									class="text-danger">&nbsp;*</span></label> <input type="text"
+									class="form-control" name="TextField" placeholder="TextField">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">
+								<label class="custom-smile-view-label">salary<span
+									class="text-danger">&nbsp;*</span></label> <input type="text"
+									class="form-control" name="TextField" placeholder="TextField">
+							</div>
+						</div>
+
+
+					</div>
+					<!--end of modal body-->
+					<div class="modal-footer">
+						<button type="button" class="btn custom-smile-btn-save">Save</button>
+						<button type="button" class="btn custom-smile-btn-cancel"
+							data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+				<!--end of modal-content-->
+
+			</div>
+		</div>
+	</div>
+	<!-- /.container-fluid -->
+
+	<!-- End of Main Content -->
+
+
+
+
+	<!-- End of Content Wrapper -->
+
+
+	<!-- End of Page Wrapper -->
+
+
+
+
+
+	<!--export table js-->
+	<th:block layout:fragment="scripts">
+
+		<!-- Page level custom scripts -->
+
+		<script>
+    $(window).ready(function() {
+      $('.loader').fadeOut(1000);
+    });
+     $(document).ready(function() {
+
+   	  $(".view").on('click', function() {
+   		 
+   		  
+     	    $('.case:checkbox:checked').parents("tr").remove();
+     	  });
+   	 $(".view").on('click', function() {
+   		 
+  	    $('.check:radio:checked').parents("tr").remove();
+  	  });
+          
+    	 
+    	  $(".edit").on('click', function() {
+      	    $('.case:checkbox:checked').parents("tr").edit();
+      	  });
+     });  
+    	  
+    	  /*  $("body").on("click", ".btn-edit", function(){
+    	        var name = $(this).parents("tr").attr('data-name');
+    	        var email = $(this).parents("tr").attr('data-email');
+    	    
+    	        $(this).parents("tr").find("td:eq(0)").html('<input name="edit_name" value="'+name+'">');
+    	        $(this).parents("tr").find("td:eq(1)").html('<input name="edit_email" value="'+email+'">');
+    	    
+    	        $(this).parents("tr").find("td:eq(2)").prepend("<button class='btn btn-info btn-xs btn-update'>Update</button><button class='btn btn-warning btn-xs btn-cancel'>Cancel</button>")
+    	        $(this).hide();
+    	    });
+    	  
+
+     $(document).ready(function() {
+  	   var myTable = $('#example1').DataTable();
+                $('#example1').on( 'click', 'tbody tr', function () {
+      	      myTable.row( this ).edit();
+      	  });
+     }); */
+  </script>
+
+		<!-- Data Tables -->
+		<script type="text/javascript"
+			th:src="@{/webjars/startbootstrap-sb-admin-2/vendor/datatables/jquery.dataTables.min.js}"></script>
+		<script type="text/javascript"
+			th:src="@{/webjars/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+		<script type="text/javascript"
+			th:src="@{/webjars/datatables-buttons/js/dataTables.buttons.min.js}"></script>
+		<script type="text/javascript"
+			th:src="@{/webjars/datatables-buttons/js/buttons.html5.min.js}"></script>
+		<script type="text/javascript"
+			th:src="@{/webjars/datatables-buttons/js/buttons.print.min.js}"></script>
+		<script type="text/javascript"
+			th:src="@{/js/datatablejs/pdfmake.min.js}"></script>
+		<script type="text/javascript"
+			th:src="@{/js/datatablejs/vfs_fonts.js}"></script>
+		<script type="text/javascript" th:src="@{/js/exporttable.js}"></script>
+		<script type="text/javascript" th:src="@{/js/buttonbootstrap4.js}"></script>
+
+
+	</th:block>
+
+
+
+	<!--js for loader--->
+
+
+
+</body>
+</html>
+
+
+
+

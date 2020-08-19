@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{BaseLayout/layout}">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+<div id="page-wrapper" layout:fragment="content">
+		<div class="card shadow mb-4 mt-2">
+
+			<!--card header-->
+			<div class="card-header py-3 ">
+				<div class="form -group row">
+					<div class="col-sm-12 mb-3 mb-sm-0">
+					
+						<h6 class="m-0 font-weight-bold text-primary" id="datatables">Index</h6>
+					</div>
+					<!-- <div class="d-flex flex-row-reverse"> -->
+
+				</div>
+			</div>
+			<!--end of card header-->
+			<div class="card-body">
+				<p>These are the commonly used Components in ECGC SMILE Project.</p>
+				<p>We recommend to use these Components only to maintain
+					uniformity.Please let us know any changes if any</p>
+				<p>
+					<strong>Please let us know if you are using any third
+						party library on mentioned mailIds.(nimish@cdac.in /
+						prakash@cdac.in)</strong>
+				</p>
+
+<!-- 				<div class="table-responsive">
+ -->					<table class="table table-bordered "
+						id="example1" width="100%" cellspacing="0">
+
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>TemplateName</th>
+								<th>Template Description</th>
+								<th>Link</th>
+							</tr>
+						</thead>
+
+						<tfoot>
+							<tr>
+								<th>No.</th>
+								<th>TemplateName</th>
+								<th>Template Description</th>
+								<th>Link</th>
+							</tr>
+						</tfoot>
+						<tbody>
+
+<tr>
+								<td>1</td>
+								<td>Data Table </td>
+								<td>
+									<p>This is new Data Table with Central Edit and View buttons.<strong>This has to be used instead of old.</strong>
+									</p>
+								</td>
+								<td><a href="datatable-with-centreal-edit-view-button">Data Table</a></td>
+							</tr>
+				
+
+							<tr>
+
+								<td>2</td>
+								<td>Common Form Elements With Thymeleaf</td>
+								<td>
+								<p>Samples for common form elements like TextBox, Date, Email, etc. This also has mechanism for POJO class mapping.</p>
+								</td>
+								<td><a href="formelementswiththymelaf">Commonly Used Form
+										Elements With Thymeleaf</a></td>
+							</tr>
+							<tr>
+
+								<td>3</td>
+								<td>Buttons</td>
+								<td>
+								  All required buttons with css to be used. for any additional button please contact us.
+								</td>
+								<td><a href="buttonswithsm">Buttons</a></td>
+							</tr>
+							<tr>
+
+							<tr>
+								<td>4</td>
+								<td>A Simple Form</td>
+								<td>A simple form with no sections or tabs.</td>
+								<td><a href="form-with-no-sections">Simple Form</a></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Form with Sections</td>
+								<td>
+								    Big forms with multiple sections. 
+								</td>
+								<td><a href="form-with-sections">Form With Sections</a></td>
+							</tr>
+
+
+
+							<tr>
+								<td>9</td>
+								<td>Multi Tab Form</td>
+								<td>Big form divided into multiple tabs. In this form user is allowed to jump across the tabs without any restriction.</td>
+								<td><a href="mutitabform">Multi Tab Form</a></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>Multi Step Form </td>
+								<td>It is multi step form implemented using multi tab form with restriction.</td>
+								<td><a href="mutitab-with-restriction">Multi Step Form</a></td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>Table To Json</td>
+								<td>plugin that converts an HTML Table into a javascript
+									object.</td>
+								<td><a href="tabletojsonwithsm">Table ToJson Demo</a></td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>Dashboard</td>
+								<td>Landing Page.</td>
+								<td><a href="dashboardwithsm">Dashboard</a></td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>Views</td>
+								<td>For viewing any kind of data this template should be used. That is anywhere you need to show fields and their values this should be used.</td>
+								<td><a href="form-view-with-sections">Views</a></td>
+							</tr>
+	<tr>
+								<td>13</td>
+								<td>Loader</td>
+								<td>sample loader</td>
+								<td><a href="loaderwithsm">Loader</a></td>
+							</tr>
+								<tr>
+								<td>14</td>
+								<td>Calendar</td>
+								<td>Calendar Template</td>
+								<td><a href="calenderwithsm">Calendar</a></td>
+							</tr>
+						</tbody>
+					</table>
+
+				<!-- </div> -->
+				<!-- table responsive  </div> -->
+			</div>
+		</div>
+
+		<!-- ACTUAL BODY CONTENT -->
+
+	</div>
+
+
+	<th:block layout:fragment="scripts">
+  		<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{/webjars/startbootstrap-sb-admin-2/vendor/datatables/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables-buttons/js/dataTables.buttons.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables-buttons/js/buttons.html5.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables-buttons/js/buttons.print.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/datatablejs/pdfmake.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/datatablejs/vfs_fonts.js}"></script>
+	<script type="text/javascript" th:src="@{/js/exporttable.js}"></script>
+	<script type="text/javascript" th:src="@{/js/buttonbootstrap4.js}"></script>
+  	
+	
+	</th:block>
+</body>
+</html>

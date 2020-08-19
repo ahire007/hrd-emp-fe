@@ -1,0 +1,97 @@
+{"properties": [
+  {
+    "name": "hystrix.command.hrd-emp-be.circuitBreaker.errorThresholdPercentage",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.hrd-emp-be.circuitBreaker.errorThresholdPercentage'"
+  },
+  {
+    "name": "hystrix.command.hrd-emp-be.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.hrd-emp-be.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.hrd-emp-be.circuitBreaker.requestVolumeThreshold",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.hrd-emp-be.circuitBreaker.requestVolumeThreshold'"
+  },
+  {
+    "name": "hystrix.command.hrd-emp-be.circuitBreaker.sleepWindowInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.hrd-emp-be.circuitBreaker.sleepWindowInMilliseconds'"
+  },
+  {
+    "name": "hrd-emp-fe.ribbon.ServerListRefreshInterval",
+    "type": "java.lang.String",
+    "description": "A description for 'hrd-emp-fe.ribbon.ServerListRefreshInterval'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds'"
+  },
+  {
+    "name": "management.endpoints.web.exposure.include",
+    "type": "java.lang.String",
+    "description": "A description for 'management.endpoints.web.exposure.include'"
+  }
+]}

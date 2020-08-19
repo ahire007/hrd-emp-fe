@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{BaseLayout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.form-actions {
+	margin: 0;
+	text-align: center;
+}
+</style>
+
+</head>
+<body>
+
+	<div id="page-wrapper" layout:fragment="content">
+
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="indexwithsm">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Form
+						Elements</li>
+				</ol>
+			</nav>
+			<div class="card shadow mb-4 mt-2">
+
+				<div class="card-header">
+
+					<h6 class="m-0 font-weight-bold text-primary" id="datatables">Commonly
+						Used Form Elements With Thymeleaf View page [For reference only...]</h6>
+
+				</div>
+				<div class="card-body">
+
+					<!-- Page Heading -->
+
+
+
+					<!-- Nested Row within Card Body -->
+					<div class="row">
+						<div class="col-lg-12">
+
+
+							<div class="form-group row">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label><b>Text field<span class="text-danger">*</span></b></label>
+									<input type="text" class="form-control"
+										th:field="${viewApplicant.userName}" placeholder="TextField">
+								</div>
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label><b>Password<span class="text-danger">*</span></b></label>
+									<input type="text" class="form-control"
+										th:field="${viewApplicant.userPassword}"> <input
+										type="checkbox" onclick="myFunction()">Show Password
+								</div>
+
+							</div>
+
+							<div class="form-group row">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label><b>Email<span class="text-danger">*</span></b></label> <input
+										type="email" class="form-control"
+										th:field="${viewApplicant.userEmail}" id="exampleInputEmail1"
+										aria-describedby="emailHelp" placeholder="Enter email">
+									<small id="emailHelp" class="form-text text-muted">We'll
+										never share your email with anyone else.</small>
+								</div>
+
+								<!-- <div class="col-sm-6 mb-3 mb-sm-0">
+										<label><b>Dropdown</b></label> <select class="form-control"
+											th:field="*{viewApplicant.category}">
+											<option value="" hidden="true">Choose Type</option>
+											<option value="composite">Composite [LOV]</option>
+											<option value="nonlife">Non-Life [LOV]</option>
+										</select>
+								</div> -->
+								
+								<div class="col-sm-6 mb-3 mb-sm-0">
+										<label><b>Dropdown</b></label>
+										<select class="form-control" th:field="*{viewApplicant.category}">
+									 		<option value="" hidden="true">Choose Type...</option>
+									       	<option th:each="categori : ${categories}"
+									               	th:value="${categori}"
+									              	th:text="${categori}">
+									          </option>
+									   	</select>
+									</div>
+							</div>
+
+
+							<div class="form-group row">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label><b>Textarea<span class="text-danger">*</span></b></label>
+									<textarea class="form-control" rows="2"
+										th:text="${viewApplicant.textArea}" cols="58"></textarea>
+								</div>
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<label><b>Date<span class="text-danger">*</span></b></label> <input
+										type="date" class="form-control"
+										th:field="${viewApplicant.date}" placeholder="Date Field">
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<div class="col-sm-6 mb-3 mb-sm-0 form-check">
+								
+								<div class="custom-control custom-form-control-lg custom-checkbox ml-2 mr-2">  
+									    <input type="checkbox" class="custom-control-input" th:value="${viewApplicant.check1}" th:checked="${viewApplicant.check1}" id="customcheck11">  
+									    <label class="custom-control-label" for="customCheck1">CustomCheckBox1</label>  
+									</div>
+									<div class="custom-control custom-form-control-lg custom-checkbox ml-2 mr-2">  
+									    <input type="checkbox" class="custom-control-input"  th:value="${viewApplicant.check2}" th:checked="${viewApplicant.check2}" id="customcheck2">  
+									    <label class="custom-control-label" for="customCheck2">CustomCheckBox2</label>  
+									</div>
+								
+								</div>
+
+								<div class="col-sm-6 mb-3 mb-sm-0 form-check">
+                                     	<div class="custom-radio custom-control ml-2 mr-2">
+										<input type="radio" id="exampleCustomRadio" name="customRadio" class="custom-control-input" th:field="${viewApplicant.gender}" th:value="Male">
+										<label class="custom-control-label" for="exampleCustomRadio">Male</label>
+									</div>								
+								<div class="custom-radio custom-control ml-2 mr-2">
+										<input type="radio" id="exampleCustomRadio1" name="customRadio" class="custom-control-input" th:field="${viewApplicant.gender}" th:value="Female">
+										<label class="custom-control-label" for="exampleCustomRadio1">FeMale</label>
+									</div>
+							</div>
+
+							<div class="form-group row">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<div class="form-group row">
+										<div class="col">
+											<div class="form-group">
+												<label><b>Fileupload</b></label>
+												<div class="custom-file">
+													<input type="file" class=" custom-file-input" name="img[]"
+														id="inputGroupFile04"
+														aria-describedby="inputGroupFileAddon04"> <label
+														class="custom-file-label" for="inputGroupFile04">Choose
+														file</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+<div class="form-actions">
+									<input type="submit" class="btn btn-primary" value="Submit"></input>
+								</div>
+						</div>
+					</div>
+
+				</div>
+				<!--End of card body -->
+				<!-- </div> -->
+				<!-- End of collapsable card -->
+
+				<!-- ACTUAL BODY CONTENT -->
+			</div>
+</div>
+
+		</div>
+	
+			<th:block layout:fragment="scripts">
+	</th:block>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{BaseLayout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Multi Tab</title>
+</head>
+<body>
+		<div id="page-wrapper" layout:fragment="content">
+
+			<nav aria-label="breadcrumb" class="mt-2">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="indexwithsm">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Tabbed Form</li>
+				</ol>
+			</nav>
+			<div class="card shadow mb-4 mt-2 bkg-color">
+
+				<!--card header-->
+				<div class="card-header">
+					<span class="custom-smile-form-header" id="datatables">Tabbed Form</span>
+				</div>
+				<!--end of card header-->
+				<div class="card-body">
+					<div class="row my-2">
+						<div class="col-lg-12 order-lg-2">
+							<ul class="nav nav-pills">
+								<li class="nav-item"><a href="" data-target="#basicdetails"
+									data-toggle="tab" class="nav-link active" id="basicdetail">Basic Details</a></li>
+
+								<li class="nav-item"><a href=""
+									data-target="#headofcaddrdetails" data-toggle="tab"
+									class="nav-link" id="headofc">Head Office Address Details</a></li>
+								<li class="nav-item"><a href=""
+									data-target="#correspondenceaddrdetails" data-toggle="tab"
+									class="nav-link" id="correspond">Correspondence Address Details</a></li>
+								<li class="nav-item"><a href=""
+									data-target="#addrdetailshindi" data-toggle="tab"
+									class="nav-link" id="addhindi">Address Details (Hindi)</a></li>
+								<li class="nav-item"><a href=""
+									data-target="#contactdetails" data-toggle="tab"
+									class="nav-link" id="contact"> Contact Details</a></li>
+
+							</ul>
+							<div class="tab-content py-4">
+								<div class="tab-pane active" id="basicdetails">
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Code<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank Code">
+
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Name<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank Name">
+
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Type<span class="text-danger">&nbsp;*</span></label>
+											<select class="form-control">
+												<option value="" hidden="true">Choose Type</option>
+												<option value="composite">Composite</option>
+												<option value="nonlife">Non-Life</option>
+											</select>
+
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Status<span class="text-danger">&nbsp;*</span></label>
+											<select class="form-control">
+												<option value="" hidden="true">Choose Type</option>
+												<option value="composite">Composite</option>
+												<option value="nonlife">Non-Life</option>
+											</select>
+
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Effective From Date<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control dateClass"
+												placeholder="Bank Effective From Date (dd/MM/yyyy)"
+												id="EFDate">
+
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Association Date<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control dateClass"
+												placeholder="Bank Association Date (dd/MM/yyyy)"
+												id="ADate">
+
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Website<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank Website">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Pan Number<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Pan Number">
+										</div>
+									</div>
+									<br>
+									<div class="form-group"> 	
+                						<button class="btn custom-smile-btn-next float-right" onclick="nextTabOne()"  type="button">  
+                							 <span class="text">Next</span>
+                							<span class="icon"> <i class="fas fa-angle-double-right"></i>
+											</span>
+									  	</button> 
+            						</div> 
+									
+									<!--/row-->
+								</div>
+								<div class="tab-pane" id="headofcaddrdetails">
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 1<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 1">
+
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 2<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 2">
+
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 3<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 3">
+
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 4<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 4">
+
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">City<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="City">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">State<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="State">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Country<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Country">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Pincode<span class="text-danger">&nbsp;*</span></label>
+											<input type="number" class="form-control"
+												placeholder="Pin Code">
+										</div>
+									</div>
+									<div class="form-group"> 
+										<button class="btn custom-smile-btn-back float-left"  type="button"> 
+											<span class="icon"> <i class="fas fa-angle-double-left"></i>
+											</span> <span class="text">Back</span>
+										</button>
+                						<button class="btn custom-smile-btn-next float-right" onclick="nextTabSec()" type="button">  
+                							 <span class="text">Next</span>
+                							<span class="icon"> <i class="fas fa-angle-double-right"></i>
+											</span>
+									  	</button> 
+            						</div> 
+									
+
+								</div>
+								<div class="tab-pane" id="correspondenceaddrdetails">
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 1<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 1">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 2<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 2">
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 3<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 3">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 4<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control" placeholder="Line 4">
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">City<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="City">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">State<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="State">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Country<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Country">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Pincode<span class="text-danger">&nbsp;*</span></label>
+											<input type="number" class="form-control"
+												placeholder="Pin Code">
+										</div>
+									</div>
+									<div class="form-group"> 
+										<button class="btn custom-smile-btn-back float-left"  type="button"> 
+											<span class="icon"> <i class="fas fa-angle-double-left"></i>
+											</span> <span class="text">Back</span>
+										</button>
+                						<button class="btn custom-smile-btn-next float-right" onclick="nextTabThree()" type="button">  
+                							 <span class="text">Next</span>
+                							<span class="icon"> <i class="fas fa-angle-double-right"></i>
+											</span>
+									  	</button> 
+            						</div> 
+									
+
+								</div>
+								<div class="tab-pane" id="addrdetailshindi">
+
+
+									<div class="form-group row">
+										<div class="col-sm-8 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Name(Hindi)<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Bank H Name">
+										</div>
+
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 1(Hindi)<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Address Line 1">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 2(Hindi)<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Address Line 2">
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 3(Hindi)<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Address Line 3">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 4(Hindi)<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Address Line 4">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">City(Hindi)<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank H City">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">State(Hindi)<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank H State">
+										</div>
+									</div>
+
+								<div class="form-group"> 
+										<button class="btn custom-smile-btn-back float-left"  type="button"> 
+											<span class="icon"> <i class="fas fa-angle-double-left"></i>
+											</span> <span class="text">Back</span>
+										</button>
+                						<button class="btn custom-smile-btn-next float-right" onclick="nextTabFour()"  type="button">  
+                							 <span class="text">Next</span>
+                							<span class="icon"> <i class="fas fa-angle-double-right"></i>
+											</span>
+									  	</button> 
+            						</div> 
+								
+
+
+								</div>
+								<div class="tab-pane" id="contactdetails">
+									<div class="form-group row">
+										<div class="col-sm mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Manager Name<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank Manager Name">
+										</div>
+										<div class="col-sm mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Primary Contact Number<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Primary Contact Number">
+										</div>
+										<div class="col-sm mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Secondary Contact Number<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Secondary Contact Number">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Phone Number (Landline)<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Phone Number">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Contact Person Name<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Contact Person Name">
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Email<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank Email">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Contact Person Email<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" placeholder="Contact Person Email">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Fax<span class="text-danger">&nbsp;*</span></label>
+											<input type="text" class="form-control"
+												placeholder="Bank Fax">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Contact Person's Contact Number<span
+													class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control"
+												placeholder="Contact Person's Contact Number">
+										</div>
+									</div>
+									<br>
+									<div class="form-group row">
+										<div class="col-sm-12 d-flex justify-content-center">		
+											<input type="submit" class="btn custom-smile-btn-success ml-2 mr-2" value="Save"></input>
+											<input type="submit" class="btn custom-smile-btn-submit ml-2 mr-2" value="Submit"></input>
+										
+							 		</div> 
+							 		<p>Note:Use these buttons as required in your form.</p>
+							 		
+									</div>
+									
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+					<!--end of card body-->
+				</div>
+				<!-- ACTUAL BODY CONTENT -->
+			</div>
+		</div>
+
+	<th:block layout:fragment="scripts">	
+	<!-- Page level custom scripts --> 
+	<script>
+	function nextTabOne(){
+		 $("#basicdetails").removeClass("active");
+		 $("#headofcaddrdetails").addClass("active");
+		 $("#headofc").addClass("nav-link active");
+		 $("#basicdetail").removeClass("active");
+		}
+	function nextTabSec(){
+		 $("#headofcaddrdetails").removeClass("active");
+		 $("#correspondenceaddrdetails").addClass("active");
+		 $("#headofc").removeClass("active");
+		 $("#correspond").addClass("nav-link active");
+		}	
+	function nextTabThree(){
+		 $("#correspondenceaddrdetails").removeClass("active");
+		 $("#addrdetailshindi").addClass("active");
+		 $("#correspond").removeClass("active");
+		 $("#addhindi").addClass("nav-link active");
+		}	
+	function nextTabFour(){
+		 $("#addrdetailshindi").removeClass("active");
+		 $("#contactdetails").addClass("active");
+		 $("#addhindi").removeClass("active");
+		 $("#contact").addClass("nav-link active");
+
+		}	
+	</script>
+	</th:block>
+</body>
+</html>

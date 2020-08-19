@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{Baselayout/layout}" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>Content Convention</title>
+<!-- Link you page level custom css here (uncomment this line). Do not add any library css here, link only you custom css file
+<link rel="stylesheet" type="text/css" th:href="@{your-css-here.css}"/> 
+-->
+<style>
+/* Custom CSS goes here */
+</style>
+</head>
+<body>
+	<div id="page-wrapper" layout:fragment="content">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page"><!-- Include current operation --></li>
+			</ol>
+		</nav>
+		
+		<!-- All HTML goes here -->
+		
+	</div>
+	<th:block layout:fragment="scripts">	
+		<!-- All JavaScript goes here -->
+	</th:block>
+</body>
+</html>

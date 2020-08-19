@@ -1,0 +1,86 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{BaseLayout/layout}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="page-wrapper" layout:fragment="content">
+	 <nav aria-label="breadcrumb" >
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="indexwithsm">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Buttons</li>
+  </ol>
+</nav>
+		<div class="card shadow mb-4 mt-3">
+
+			<div class="card-header">
+				<h6 class="m-0 font-weight-bold text-primary" id="Alertbox">Buttons</h6>
+			</div>
+
+
+			<div class="card-body">
+
+				<div class="form-group row">
+					<div class="col-sm-12 d-flex justify-content-center">
+						<input type="submit" class="btn custom-smile-btn-success ml- mr-1"
+							value="Save"></input> <input type="submit"
+							class="btn custom-smile-btn-submit ml-1 mr-1" value="Submit"></input>
+						<input type="submit"
+							class="btn custom-smile-btn-approve ml-1 mr-1" value="Approve"></input>
+						<input type="submit"
+							class="btn custom-smile-btn-recommend ml-1 mr-1"
+							value="Recommend"></input> <input type="submit"
+							class="btn custom-smile-btn-reject ml-1 mr-1" value="Reject"></input>
+						<input type="submit" class="btn custom-smile-btn-drop ml-1 mr-1"
+							value="Drop"></input> <input type="submit"
+							class="btn custom-smile-btn-warning ml-1 mr-1" value="Modify"></input>
+					
+					</div>
+					
+				</div>
+				
+				<div class="form-group row">
+					<div class="col-sm-12 d-flex justify-content-center">
+						<button type="button"
+							class="btn custom-smile-btn-upload mr-1 ml-1">
+							<i class="fas fa-cloud-upload-alt"></i> Upload
+						</button>
+						<button type="button"
+							class="btn custom-smile-btn-otp mr-1 ml-1">
+							OTP
+						</button>
+						<button type="button"
+							class="btn custom-smile-btn-verify mr-1 ml-1">
+							 Verify
+						</button>
+						<button type="button"
+							class="btn custom-smile-btn-download ml-1 mr-1">
+							<i class="fas fa-cloud-download-alt"></i>Download
+						</button>
+						<button class="btn custom-smile-btn-back " type="button">
+							<span class="icon"> <i
+								class="fas fa-angle-double-left mr-1 ml-1"></i>
+							</span> <span class="text">Back</span>
+						</button>
+						<button class="btn custom-smile-btn-next  mr-1 ml-1" type="button">
+							<span class="text">Next</span> <span class="icon"> <i
+								class="fas fa-angle-double-right"></i>
+							</span>
+						</button>
+					
+					</div>
+					<p>
+						<b>Note:</b>Use this buttons as required in your form.
+					</p>
+					</div>
+			</div>
+		</div>
+		<!-- ACTUAL BODY CONTENT -->
+
+	</div>
+	<th:block layout:fragment="scripts">
+	</th:block>
+</body>
+</html>

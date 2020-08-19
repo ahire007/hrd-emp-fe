@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{BaseLayout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Add Broker Applicant</title>
+<style>
+.form-actions {
+	margin: 0;
+	text-align: center;
+}
+
+hr.broad {
+	border: 2px solid;
+}
+
+hr.solidarea {
+	border: 0.5px solid;
+}
+</style>
+
+</head>
+<body>
+	<div id="page-wrapper" layout:fragment="content">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="indexwithsm">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Form
+					Title</li>
+			</ol>
+		</nav>
+		<div class="card shadow mb-4 mt-2">
+			<div class="card-header custom-smile-form-header">
+	
+							Form Title [only custom form header style]
+					
+				
+						<button type="button"
+							class="btn  custom-smile-btn-light float-right"
+							data-toggle="modal" data-target="#myModal">
+							<i class="fas fa-question-circle"></i>
+						</button>
+					
+
+				
+			</div>
+			<div class="card-body">
+				<!-- Page Heading -->
+
+
+				<!-- Nested Row within Card Body -->
+				<div class="row">
+					<div class="col-lg-12">
+						<form action="#">
+
+							<div class="card section-border-left-primary mb-4 mt-3">
+
+								<div class="card-header custom-smile-form-subsection-header">		
+										Personal Information
+								</div>
+								<!-- Card Content - Collapse -->
+
+								<div class="card-body">
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Broker Name<span
+												class="text-danger">&nbsp;&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Broker Name">
+										</div>
+										<div class="col-sm-6 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Category<span
+												class="text-danger">&nbsp;*</span></label> <select
+												class="form-control">
+												<option value="" hidden="true">Choose Type</option>
+												<option value="composite">Composite [LOV]</option>
+												<option value="nonlife">Non-Life [LOV]</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Licence No. by
+												IRDAI<span class="text-danger">&nbsp;*</span>
+											</label> <input type="text" class="form-control" id=""
+												placeholder="Enter Licence No by Irdai">
+										</div>
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Licence
+												Validity From<span class="text-danger">&nbsp;*</span>
+											</label> <input type="date" class="form-control" id=""></input>
+										</div>
+										<!--   th:field="&nbsp;*{licenceValidityFromDt}"   th:field="&nbsp;*{licenceValidityToDt}"-->
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Licence
+												Validity To<span class="text-danger">&nbsp;*</span>
+											</label> <input type="date" class="form-control" id=""></input>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+
+
+
+
+							<!-- <hr class="broad"> -->
+							<div class="card section-border-left-danger mb-4 mt-3">
+
+								<div class="card-header custom-smile-form-subsection-header">
+									Contact Details
+								</div>
+								<div class="card-body">
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-12 mb-6 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 1<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Address..">
+										</div>
+									</div>
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-12 mb-6 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 2<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Address..">
+										</div>
+									</div>
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-12 mb-6 mb-sm-0">
+											<label class="custom-smile-form-label">Address Line 3<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Address..">
+										</div>
+									</div>
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">City<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter City">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">State<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter State">
+										</div>
+									</div>
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Country<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Country">
+										</div>
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Postal Code<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Postal Code">
+										</div>
+									</div>
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Telephone No.<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Telephone No.">
+										</div>
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Fax<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Fax No.">
+										</div>
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Mobile No.<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Mobile No.">
+										</div>
+									</div>
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-6 mb-3 mb-sm-0">
+											<label class="custom-smile-form-label">Email Id<span
+												class="text-danger">&nbsp;*</span></label> <input type="email"
+												class="form-control" id="" aria-describedby="emailHelp"
+												placeholder="Enter Email Id"> <small id="emailHelp"
+												class="form-text text-muted"> We'll never share your
+												email with anyone else.</small>
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- <hr class="broad"> -->
+							<div class="card section-border-left-primary mb-4 mt-3">
+
+								<div class="card-header custom-smile-form-subsection-header">
+								 Principal Officer's Details
+								</div>
+								<div class="card-body">
+
+									<div class="form-group row ml-1 mr-1">
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Name<span
+												class="text-danger"> &nbsp;*</span></label> <input type="text"
+												class="form-control" id=""
+												placeholder="Enter Name of Principal Officer">
+										</div>
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Contact No.<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id=""
+												placeholder="Enter Contact No. of Principal Officer">
+										</div>
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Email Id<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id=""
+												placeholder="Enter Email Id of Principal Officer">
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+							<!-- <hr class="broad"> -->
+							<div class="card section-border-left-danger mb-4 mt-3">
+
+								<div class="card-header custom-smile-form-subsection-header">
+									Bank Details
+								</div>
+								<div class="card-body">
+
+									<!-- <div class="form-group row  ml-1 mr-1">
+												<div class="col-sm-4 mb-2 mb-sm-0">
+													<label class="custom-smile-form-label"><b>No. of
+															Branches<span class="text-danger">&nbsp;*</span>
+													</b></label> <input type="text" class="form-control" id=""
+														placeholder="Enter No. of Banches">
+												</div>
+											</div>
+ -->
+									<div class="form-group row  ml-1 mr-1">
+										<div class="col-sm-6 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Account
+												No.<span class="text-danger">&nbsp;*</span>
+											</label> <input type="text" class="form-control" id=""
+												placeholder="Enter Bank Account No.">
+										</div>
+										<div class="col-sm-6 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Beneficiary
+												Name<span class="text-danger">&nbsp;*</span>
+											</label> <input type="text" class="form-control" id=""
+												placeholder="Enter Beneficiary Name">
+										</div>
+									</div>
+
+
+									<div class="form-group row  ml-1 mr-1">
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Name<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Bank Name">
+										</div>
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">Bank Branch<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter Bank Branch">
+										</div>
+										<div class="col-sm-4 mb-2 mb-sm-0">
+											<label class="custom-smile-form-label">IFSC No.<span
+												class="text-danger">&nbsp;*</span></label> <input type="text"
+												class="form-control" id="" placeholder="Enter IFSC No.">
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- <hr class="broad"> -->
+							<div class="card section-border-left-primary mb-4 mt-3">
+
+								<div class="card-header custom-smile-form-subsection-header">
+									Document Details
+								</div>
+								<div class="card-body">
+
+									<div class="form-group row ml-1 mr-1">
+										<label class="col-sm-2 col-form-label">PAN<span
+											class="text-danger">&nbsp;*</span></label>
+										<div class="col-sm-5">
+											<input type="text" class="form-control" id=""
+												placeholder="PAN">
+										</div>
+										<div class="col-sm-5">
+											<div class="custom-file">
+												<input type="file" class=" custom-file-input" name="img[]"
+													id="inputGroupFile04"
+													aria-describedby="inputGroupFileAddon04"> <label
+													class="custom-file-label" for="inputGroupFile04">Upload
+													PAN Card</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group row ml-1 mr-1">
+										<label class="col-sm-2 col-form-label">GSTIN<span
+											class="text-danger">&nbsp;*</span>
+										</label>
+										<div class="col-sm-5">
+											<input type="text" class="form-control" id=""
+												placeholder="GSTIN">
+										</div>
+										<div class="col-sm-5">
+											<div class="custom-file">
+												<input type="file" class=" custom-file-input" name="img[]"
+													id="inputGroupFile04"
+													aria-describedby="inputGroupFileAddon04"> <label
+													class="custom-file-label" for="inputGroupFile04">Upload
+													GSTIN Certificate</label>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="form-group row ml-1 mr-1">
+										<label class="col-sm-2 col-form-label custom-smile-form-label">Tax
+											Exemption certificate No.<span class="text-danger">&nbsp;*</span>
+										</label>
+										<div class="col-sm-5">
+											<input type="text" class="form-control" id=""
+												placeholder="Tax Exemption Certificate No">
+										</div>
+										<div class="col-sm-5">
+											<div class="custom-file">
+												<input type="file" class=" custom-file-input" name="img[]"
+													id="inputGroupFile04"
+													aria-describedby="inputGroupFileAddon04"> <label
+													class="custom-file-label" for="inputGroupFile04">Upload
+													Tax Exemption certificate</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group row mr-1 ml-1">
+										<label class="col-sm-2 col-form-label">Cancelled
+											Cheque<span class="text-danger">&nbsp;*</span>
+										</label>
+										<div class="col-sm-4">
+											<div class="custom-file">
+												<input type="file" class=" custom-file-input" name="img[]"
+													id="inputGroupFile04"
+													aria-describedby="inputGroupFileAddon04"> <label
+													class="custom-file-label" for="inputGroupFile04">Upload
+													Cancelled Cheque</label>
+											</div>
+										</div>
+
+										<label class="col-sm-2 col-form-label">Financial
+											Statement<span class="text-danger">&nbsp;*</span>
+										</label>
+
+										<div class="col-sm-4">
+											<div class="custom-file">
+												<input type="file" class=" custom-file-input" name="img[]"
+													id="inputGroupFile04"
+													aria-describedby="inputGroupFileAddon04"> <label
+													class="custom-file-label" for="inputGroupFile04">Upload
+													Financial Statement</label>
+											</div>
+										</div>
+									</div>
+									<br>
+								</div>
+
+							</div>
+
+							<div class="card section-border-left-danger mb-4 mt-3">
+
+								<div class="card-header custom-smile-form-subsection-header">
+								Recommendations of the Processing Officer
+								</div>
+
+
+								<div class="form-group row ml-1 mr-1 mt-1">
+									<div class="col-sm-12 mb-2 mb-sm-0 ">
+										<label class="custom-smile-form-label">Recommendations<span
+											class="text-danger">&nbsp;*</span></label>
+										<textarea class="form-control" id=""
+											placeholder="Remarks"></textarea>
+									</div>
+								</div>
+								<div class="form-group row ml-1 mr-1">
+									<div class="col-sm-6 mb-2 mb-sm-0"></div>
+									<div class="col-sm-2 mb-2 mb-sm-0">
+										<label class="custom-smile-form-label">Name and
+											Designation of the Officer<span class="text-danger">&nbsp;*</span>
+										</label>
+									</div>
+									<div class="col-sm-4 mb-2 mb-sm-0">
+										<input type="text" class="form-control" id=""
+											placeholder="Will be fecthecd from session ">
+									</div>
+
+								</div>
+							</div>
+							<div class="form-actions mt-1">
+								<input type="submit" class="btn btn-primary" value="Submit"></input>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header bg-light">
+						<h4 class="modal-title" style="color: black;">This is Modal
+							For help</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+
+						<div class="form-group row">
+							<div class="col-sm-12 mb-3 mb-sm-0">Content regarding Help
+								goes here</div>
+						</div>
+
+
+					</div>
+					<!--end of modal body-->
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+				<!--end of modal-content-->
+
+			</div>
+		</div>
+	</div>
+			<th:block layout:fragment="scripts">
+	</th:block>
+</body>
+</html>

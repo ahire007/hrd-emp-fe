@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{BaseLayout/layout}">
+<head>
+
+<title>Table To Json</title>  
+
+</head>
+<body>
+<div id="page-wrapper" layout:fragment="content">
+ <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Heading</h1>
+          </div>
+          
+          <!-- Content Row -->
+          <div class="container-fluid">
+          <nav aria-label="breadcrumb" class="mt-2">
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="indexwithsm">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Table to Json</li>
+  </ol>
+</nav>
+          <h1>Add Rows in table Dynamically using jQuery and convert it into JSON format</h1>
+  <div id='container'>
+
+    <table border="1" cellspacing="0" class="table tab_logic" id="example">
+      <thead>
+        <tr>
+          <th class="text-center text-info">
+            CHECK
+          </th>
+          <th class="text-center text-info">
+            S.   No
+          </th>
+          <th class="text-center text-info">
+            First name
+          </th>
+          <th class="text-center text-info">
+            Last name
+          </th>
+
+          <th class="text-center text-info">
+            Select type
+          </th>
+
+          <th class="text-center text-info">
+            Email id
+          </th>
+          <th class="text-center text-info">
+            Radio1
+          </th>
+          <th class="text-center text-info">
+            Radio2
+          </th>
+          <th class="text-center text-info">
+            Checkbox1
+          </th>
+          <th class="text-center text-info">
+            Checkbox2
+          </th>
+          <th class="text-center text-info">
+            DateTime
+          </th>
+          <th class="text-center text-info">
+            Date
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type='checkbox' name="check" class='case' /></td>
+          <td><span id='snum'>1.</span></td>
+          <td>
+            <input type="text" placeholder='first name' class="form-control" />
+          </td>
+          <td>
+            <input type="text"  placeholder='last name' class="form-control" />
+          </td>
+          <td>
+            <select  class="form-control">
+              <option value="" hidden>Select</option>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="fiat">Fiat</option>
+              <option value="audi">Audi</option>
+            </select>
+          </td>
+
+          <td>
+            <input type="text"  placeholder='email' class="form-control" />
+          </td>
+          <td>
+            <input type="radio">
+          </td>
+          <td>
+            <input type="radio" >
+          </td>
+          <td>
+            <input type="checkbox" >
+          </td>
+          <td>
+            <input type="checkbox" >
+          </td>
+          <td>
+            <input type="datetime-local" >
+          </td>
+          <td>
+            <input type="date" >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class='delete'>- Delete</button>
+    <button type="button" class='addmore'>+ Add More</button>
+
+    <p class="lead"><button id="json" class="btn btn-primary">TO JSON</button>
+
+      <div id="show"></div>
+    
+          	<!-- ACTUAL BODY CONTENT -->
+          
+          </div>
+</div>
+</div>
+
+			<th:block layout:fragment="scripts">
+		 
+ <script type="text/javascript" th:src="@{js/activity.js}"></script> 
+ 	<script type="text/javascript" th:src="@{js/table-to-json.js}"></script>
+			
+	</th:block>
+</body>
+</html>
